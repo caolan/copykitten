@@ -1,0 +1,11 @@
+{
+  "name": "copykitten",
+  "version": "0.0.2",
+  "description": "Tiny immutable JSON",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --ui tdd test/test.js"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
+}
