@@ -2,24 +2,22 @@
 
 ```
     /\/\
-( =( ∘˾∘)=
+( =( ^-^)=
  \(  ⊃C⊃
       Copy Kitten
 ```
 
-_Tiny immutable JSON (< 1kb gzipped)_
+_Tiny immutable JSON data structures (< 1kb gzip)_
 
-Functions to manipulate JSON data and return an updated copy. Leaves the
-original data untouched.
-
-Copy Kitten is a minimal library, designed only for JSON data types:
-strings, numbers, booleans, null, objects, and arrays. For a much wider
-selection of immutable data structures with less naive
+This is a minimal library, designed specifically for
+JSON-compatible values: Strings, Numbers, Booleans, null, Objects, and Arrays.
+For a wider selection of immutable data structures with less naive
 implementations, see [Immutable.js][immutable-js].
 
-A reference to a Copy Kitten object will always return the same
-value. This can make understanding your programs easier, and help you
-detect state changes during top-down rendering (e.g. [Redux][redux]).
+Copy Kitten manipulates JSON data and returns an updated copy; the original data is
+preserved. A reference to a Copy Kitten result will always return the same
+value. Use this to write easy-to-understand code and optimise
+top-down rendering (e.g. [Redux][redux]).
 
 
 ## Data conversion
