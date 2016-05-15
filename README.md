@@ -12,15 +12,14 @@ _Tiny immutable JSON (< 1kb gzipped)_
 Functions to manipulate JSON data and return an updated copy. Leaves the
 original data untouched.
 
-A refrence to a CopyKitten object will always return the same
-value. This can make understanding your programs easier and is
-especially useful to detect state changes during top-down rendering
-(e.g. [Redux][redux]).
-
 CopyKitten is a minimal library, designed only for JSON data types:
 strings, numbers, booleans, null, objects, and arrays. For a much wider
 selection of immutable data structures with less naive
 implementations, see [Immutable.js][immutable-js].
+
+A refrence to a CopyKitten object will always return the same
+value. This can make understanding your programs easier, and help you
+detect state changes during top-down rendering (e.g. [Redux][redux]).
 
 
 ## Data conversion
