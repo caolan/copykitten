@@ -22,21 +22,14 @@ top-down rendering (e.g. [Redux][redux]).
 
 ## Data conversion
 
-### JSON value -> immutable
-
 ```javascript
-copykitten.toImmutable({example: 'value'})
-```
+// JSON value -> immutable
+var immutable = copykitten.toImmutable({example: 'value'})
 
-### Immutable value -> JSON string
-
-```javascript
+// Immutable value -> JSON string
 JSON.stringify(immutable)
-```
 
-### Immutable object -> JSON object
-
-```javascript
+// Immutable value -> JSON object
 immutable.toJSON();
 ```
 
