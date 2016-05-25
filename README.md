@@ -322,7 +322,7 @@ implemented by the provided function. Returns boolean.
 ```javascript
 var toys = copykitten.toImmutable(['yarn', 'ball', 'mouse']);
 var small = toys.every(function (toy) {
-    return toys.length < 10;
+    return toy.length < 10;
 });
 
 // small == true
@@ -338,7 +338,7 @@ by the provided function.
 ```javascript
 var toys = copykitten.toImmutable(['yarn', 'ball', 'mouse']);
 var tiny = toys.filter(function (toy) {
-    return toys.length < 4;
+    return toy.length < 4;
 });
 
 // tiny is now ['ball']
@@ -354,7 +354,7 @@ Executes a provided function once per FrozenArray element.
 var toys = copykitten.toImmutable(['yarn', 'ball', 'mouse']);
 
 toys.forEach(function (toy) {
-    console.log(yoy);
+    console.log(toy);
 });
 ```
 
