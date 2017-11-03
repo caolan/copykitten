@@ -1,6 +1,6 @@
 {
   "name": "copykitten",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Tiny immutable JSON data structures",
   "scripts": {
     "test": "./node_modules/.bin/mocha --ui tdd test/test.js"
