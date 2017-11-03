@@ -41,17 +41,6 @@
         return a;
     }
 
-    function deepMerge(a, b) {
-        props(b).forEach(function (k) {
-            if (typeof a[k] === 'object' && typeof b[k] === 'object') {
-                a[k] = a[k].deepMerge(b[k]);
-            }
-            else {
-                a[k] = b[k];
-            }
-        });
-    }
-
     function thaw(source, constructor) {
         return merge(new (constructor || source.constructor), source);
     };
@@ -81,7 +70,19 @@
     });
 
     FrozenObject.prototype.deepMerge = updater(function (obj) {
-        deepMerge(this, obj);
+        var a = this;
+        var b = obj;
+        props(b).forEach(function (k) {
+            if (typeof a[k] === 'object' &&
+                typeof b[k] === 'object' &&
+                !Array.isArray(b[k]) &&
+                !(a[k] instanceof FrozenArray)) {
+                a[k] = a[k].deepMerge(b[k]);
+            }
+            else {
+                a[k] = b[k];
+            }
+        });
     });
 
     FrozenObject.prototype.thaw = function () {
