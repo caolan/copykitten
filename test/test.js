@@ -163,6 +163,45 @@ suite('FrozenObject', function () {
         });
     });
 
+    test('deepMerge', function () {
+        "use strict";
+        var obj = copykitten.toImmutable({
+            title: 'test',
+            meta: {
+                author: {
+                    name: 'foo',
+                    role: 'user'
+                }
+            }
+        });
+        var obj2 = obj.deepMerge({
+            meta: {
+                author: {
+                    id: 123,
+                    role: 'admin'
+                },
+                date: 'today'
+            },
+            other: {
+                something: 'else'
+            }
+        });
+        assert.deepEqual(JSON.parse(JSON.stringify(obj2)), {
+            title: 'test',
+            meta: {
+                author: {
+                    id: 123,
+                    role: 'admin',
+                    name: 'foo'
+                },
+                date: 'today'
+            },
+            other: {
+                something: 'else'
+            }
+        });
+    });
+
     test('JSON.stringify', function () {
         var obj = copykitten.toImmutable({
             arr: [1, 2, 3],

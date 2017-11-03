@@ -40,7 +40,8 @@ immutable.toJSON();
 * [FrozenObject](#FrozenObject)
   * [set(key, value)](#FrozenObject_set)
   * [remove(key)](#FrozenObject_remove)
-  * [merge(props)](#FrozenObject_props)
+  * [merge(props)](#FrozenObject_merge)
+  * [deepMerge(props)](#FrozenObject_deepMerge)
   * [update(f)](#FrozenObject_update)
   * [thaw()](#FrozenObject_thaw)
   * [toJSON()](#FrozenObject_toJSON)
@@ -150,6 +151,21 @@ var b = a.merge({status: 'hungry'});
 
 // a is now {name: 'Kitten'}
 // b is now {name: 'Kitten', status: 'hungry'}
+```
+
+<a name="FrozenObject_deepMerge"></a>
+
+#### deepMerge(props)
+
+Like [merge(props)](#FrozenObject_merge) but will recursively merge
+nested objects.
+
+```javascript
+var a = copykitten.toImmutable({animal: {name: 'Kitten'}});
+var b = a.deepMerge({animal: {status: 'hungry'}});
+
+// a is now {animal: {name: 'Kitten'}}
+// b is now {animal: {name: 'Kitten', status: 'hungry'}}
 ```
 
 <a name="FrozenObject_update"></a>
