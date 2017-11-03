@@ -1,6 +1,6 @@
 {
   "name": "copykitten",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tiny immutable JSON data structures",
   "scripts": {
     "test": "./node_modules/.bin/mocha --ui tdd test/test.js"
@@ -11,5 +11,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/caolan/copykitten.git"
-  }
+  },
+  "main": "copykitten.js"
 }
