@@ -73,7 +73,7 @@
         var a = this;
         var b = obj;
         props(b).forEach(function (k) {
-            if (typeof b[k] === 'object' && !Array.isArray(b[k]) &&
+            if (typeof b[k] === 'object' && !Array.isArray(b[k]) && b[k] !== null &&
                 a[k] instanceof FrozenObject && !(a[k] instanceof FrozenArray)) {
                 a[k] = a[k].deepMerge(b[k]);
             }

@@ -176,7 +176,9 @@ suite('FrozenObject', function () {
             tags: [{id: 1, name: 'one'}, 2, 3, 4],
             foo: {a: 1},
             bar: ['bar'],
-            a: null
+            a: null,
+            b: {thing: 'stuff'},
+            d: null
         });
         var obj2 = obj.deepMerge({
             meta: {
@@ -192,7 +194,9 @@ suite('FrozenObject', function () {
             tags: [{id: 1}],
             foo: ['foo'],
             bar: {b: 2},
-            a: {test: true}
+            a: {test: true},
+            b: null,
+            c: null
         });
         assert.deepEqual(JSON.parse(JSON.stringify(obj2)), {
             title: 'test',
@@ -210,7 +214,10 @@ suite('FrozenObject', function () {
             tags: [{id: 1}],
             foo: ['foo'],
             bar: {b: 2},
-            a: {test: true}
+            a: {test: true},
+            b: null,
+            c: null,
+            d: null
         });
     });
 
